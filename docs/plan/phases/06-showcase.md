@@ -18,4 +18,4 @@ The GitHub page that explains the project: what it is, a picture of how it works
 - ffmpeg may not be installed; checked at the gate (installing needs Ivan's OK).
 
 ## Phase gate record
-- (filled at the gate)
+- Preview given in chat 2026-11-07. Tools: playwright-cli for screenshots/frames, Mermaid for the diagram (GitHub renders it), GIF built from frames (no ffmpeg on this PC; Pillow in a throwaway venv). Decisions: D26 (picture run), D27 (README review after). Ivan's go: 2026-11-07, "Continue and dont forget to update git and add some picures, try to finish this now" (D27).

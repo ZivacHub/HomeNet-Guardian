@@ -15,4 +15,4 @@ A tool for parents must not be easy to break into. At the end there is a short l
 - Strix is optional (paid key); the free path above is the default.
 
 ## Phase gate record
-- (filled at the gate)
+- Preview given in chat 2026-11-07. Tools: security-review skill + own review, curl probes on 127.0.0.1 (free path; Strix needs a paid key, not used). Decisions: none new. Ivan's go: 2026-11-07, "Continue and dont forget to update git and add some picures, try to finish this now" (D27).

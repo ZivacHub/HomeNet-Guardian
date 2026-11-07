@@ -38,7 +38,7 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
   - [x] 3.7 Payments & stores screen
   - [x] 3.8 Settings & "What this does NOT see"
   - [x] 3.9 Design review and polish pass
-- [ ] Phase 4 — Reports
+- [~] Phase 4 — Reports
   - [ ] 4.1 Weekly and monthly report numbers
   - [ ] 4.2 Reports screen + printable HTML export
 - [ ] Phase 5 — Security check

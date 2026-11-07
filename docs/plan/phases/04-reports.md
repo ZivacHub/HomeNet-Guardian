@@ -15,4 +15,4 @@ The weekly and monthly "where and what my child does most" report. At the end yo
 - none yet
 
 ## Phase gate record
-- (filled at the gate)
+- Preview given in chat 2026-11-07. Search: reports reuse timeuse.py and Recharts; no new library or skill needed (checked package.json and the dataviz skill already in use). Decisions: D25 (4-week history). Ivan's go: 2026-11-07, "Continue and dont forget to update git and add some picures, try to finish this now" (D27).

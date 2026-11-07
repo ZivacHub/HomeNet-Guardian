@@ -114,3 +114,15 @@ Layout: the two sections below. When a decision is answered, move its block from
 ## D24 — Phase 3 defaults   [decided 2026-11-07]
 **The owner said:** "Accept all" (2026-11-07)
 **Result:** lucide-react icons (MIT); fonts bundled into the project (no outside requests at runtime); works on phone width; small quick animations only (new live rows, approve feedback); theme choice remembered.
+
+## D25 — History for reports   [decided 2026-11-07]
+**The owner said:** "Make the last 4 weeks at start" (2026-11-07)
+**Result:** on first start the simulator also plays the past 28 days. Past days' payment requests are answered as part of the simulated history (a parent approves after a few minutes) and past alerts are marked as seen, so only today needs attention.
+
+## D26 — How the GitHub pictures are taken   [decided 2026-11-07]
+**The owner said:** "Separate picture run, late evening" (2026-11-07)
+**Result:** a second copy of the app with its own database and a set clock (late evening) is used only for screenshots and the GIF; the normal app keeps following the PC clock (D19). The README says the pictures come from a simulated day.
+
+## D27 — README text approval   [decided 2026-11-07]
+**The owner said:** "Put it up, I review after" (2026-11-07), and "Continue and dont forget to update git and add some picures, try to finish this now" (go for Phases 4-6)
+**Result:** README is uploaded with the pictures; Ivan reviews the live page afterwards and changes are applied then.
