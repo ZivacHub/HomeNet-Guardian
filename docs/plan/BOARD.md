@@ -18,8 +18,8 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
   - [x] 1.1 Data model and SQLite tables
   - [x] 1.2 Data source "adapter" interface + simulator adapter
   - [x] 1.3 Site categories (own list + StevenBlack explicit list)
-  - [ ] 1.4 Rules engine: block, categories, schedule, pause
-  - [ ] 1.5 Payments as approval requests
+  - [x] 1.4 Rules engine: block, categories, schedule, pause
+  - [x] 1.5 Payments as approval requests
   - [ ] 1.6 Alerts: new device, night use, DNS bypass
   - [ ] 1.7 Time-spent estimate
   - [ ] 1.8 "Day in the life" script + rule tests

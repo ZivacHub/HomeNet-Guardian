@@ -2,7 +2,7 @@
 Git: main @ fb4edb8 "Phase 0 closed: board, handoff, memory" · pushed: yes (https://github.com/ZivacHub/HomeNet-Guardian, PUBLIC) · uncommitted: none
 
 ## Where we are in the plan
-Phase 0 of 7 — Foundation is DONE. Steps done 4/34. Next per plan: Phase 1 gate, then 1.1 Data model and SQLite tables.
+Phase 1 of 7 — Engine + simulator, IN PROGRESS. Steps done 9/34 (1.1-1.5 done). Next per plan: 1.6 Alerts.
 
 ## What we're building
 A parent's dashboard for the home network that needs nothing on the child's device, running on a simulated family day, shown on a public GitHub page with screenshots, a GIF and a diagram. Goal in Ivan's words: docs/PRODUCT.md (CONFIRMED 2026-11-07).
@@ -16,15 +16,15 @@ A parent's dashboard for the home network that needs nothing on the child's devi
 - Left unfinished: nothing
 
 ## Next steps (strictly in order; step 1 is where the next session starts)
-1. Phase 1 gate: plain-words preview, skills/repos search for the simulator/rules engine, decisions (if any), Ivan's go — done when: gate record filled in the phase file
-   Read first: docs/plan/phases/01-engine-simulator.md, docs/reference/ARCHITECTURE.md
-2. 1.1 Data model and SQLite tables (strong, here) — done when: pytest writes/reads one row per table
-   Read first: docs/plan/phases/01-engine-simulator.md, docs/reference/ARCHITECTURE.md
-3. 1.2 Adapter interface + simulator (strong, here) — done when: same seed gives same day; every event type appears
-   Read first: docs/plan/phases/01-engine-simulator.md
+1. Check the step 1.7 helper's work (it was still running when the usage limit hit): backend/homenet/timeuse.py, tests/test_timeuse.py, tests/test_site_of.py, site_of() in categories.py — done when: full pytest passes and the files are reviewed, then commit
+   Read first: docs/plan/phases/01-engine-simulator.md, backend/homenet/engine.py
+2. 1.6 Alerts (standard): fill backend/homenet/alerts.py (stub with the contract the engine calls) — done when: each alert appears once at the expected time in the simulated day
+   Read first: docs/plan/phases/01-engine-simulator.md, backend/homenet/alerts.py, backend/homenet/engine.py
+3. 1.8 Day-in-the-life script (seed Mom, Dad, Ana, Luka + known devices, run SimulatorAdapter, approve Luka's 17:04 request at 17:08) and close Phase 1
+   Read first: docs/plan/phases/01-engine-simulator.md, backend/homenet/adapters/simulator.py
 
 ## Waiting on the owner
-- Go for Phase 1 (after the gate preview)
+- nothing (Phase 1 go given 2026-11-07)
 
 ## Gotchas a fresh session would get wrong (max 8, only things still true)
 - Project name is HomeNet Guardian (D5); folder stays Family_WiFi (D11).
