@@ -30,7 +30,7 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
   - [ ] 2.4 30-day log cleanup + "delete everything"
 - [~] Phase 3 — Dashboard screens
   - [x] 3.1 React app shell, navigation, light/dark themes
-  - [ ] 3.2 Overview screen
+  - [x] 3.2 Overview screen
   - [ ] 3.3 Devices screen
   - [ ] 3.4 Live activity screen (Wireshark-style table)
   - [ ] 3.5 Where time goes screen
