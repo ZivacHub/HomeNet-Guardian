@@ -81,3 +81,25 @@ def categorize(domain: str) -> str:
     if is_explicit(d):
         return EXPLICIT
     return OTHER
+
+
+_SECOND_LEVELS = frozenset({"co", "com", "org", "net", "gov", "ac", "edu"})
+
+
+def site_of(domain: str) -> str:
+    """The "site" a domain belongs to, for top-sites lists (m.youtube.com -> youtube.com)."""
+    d = _normalize(domain)
+    if not d:
+        return ""
+    table = _load_categories()
+    matches = [c for c in _candidates(d) if c in table]
+    if matches:
+        cat = table[matches[0]]
+        same = [c for c in matches if table[c] == cat]
+        return min(same, key=len)
+    labels = d.split(".")
+    if len(labels) <= 2:
+        return d
+    if labels[-2] in _SECOND_LEVELS and len(labels[-1]) == 2:
+        return ".".join(labels[-3:])
+    return ".".join(labels[-2:])

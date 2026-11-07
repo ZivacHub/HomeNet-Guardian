@@ -2,7 +2,7 @@
 Git: main @ fb4edb8 "Phase 0 closed: board, handoff, memory" · pushed: yes (https://github.com/ZivacHub/HomeNet-Guardian, PUBLIC) · uncommitted: none
 
 ## Where we are in the plan
-Phase 1 of 7 — Engine + simulator, IN PROGRESS. Steps done 9/34 (1.1-1.5 done). Next per plan: 1.6 Alerts.
+Phase 1 of 7 — Engine + simulator, IN PROGRESS. Steps done 10/34 (1.1-1.5 and 1.7 done). Next per plan: 1.6 Alerts.
 
 ## What we're building
 A parent's dashboard for the home network that needs nothing on the child's device, running on a simulated family day, shown on a public GitHub page with screenshots, a GIF and a diagram. Goal in Ivan's words: docs/PRODUCT.md (CONFIRMED 2026-11-07).
@@ -16,11 +16,9 @@ A parent's dashboard for the home network that needs nothing on the child's devi
 - Left unfinished: nothing
 
 ## Next steps (strictly in order; step 1 is where the next session starts)
-1. Check the step 1.7 helper's work (it was still running when the usage limit hit): backend/homenet/timeuse.py, tests/test_timeuse.py, tests/test_site_of.py, site_of() in categories.py — done when: full pytest passes and the files are reviewed, then commit
-   Read first: docs/plan/phases/01-engine-simulator.md, backend/homenet/engine.py
-2. 1.6 Alerts (standard): fill backend/homenet/alerts.py (stub with the contract the engine calls) — done when: each alert appears once at the expected time in the simulated day
+1. 1.6 Alerts (standard): fill backend/homenet/alerts.py (stub with the contract the engine calls) — done when: each alert appears once at the expected time in the simulated day
    Read first: docs/plan/phases/01-engine-simulator.md, backend/homenet/alerts.py, backend/homenet/engine.py
-3. 1.8 Day-in-the-life script (seed Mom, Dad, Ana, Luka + known devices, run SimulatorAdapter, approve Luka's 17:04 request at 17:08) and close Phase 1
+2. 1.8 Day-in-the-life script (seed Mom, Dad, Ana, Luka + known devices, run SimulatorAdapter, approve Luka's 17:04 request at 17:08) and close Phase 1
    Read first: docs/plan/phases/01-engine-simulator.md, backend/homenet/adapters/simulator.py
 
 ## Waiting on the owner

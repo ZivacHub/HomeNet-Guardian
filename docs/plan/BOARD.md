@@ -21,7 +21,7 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
   - [x] 1.4 Rules engine: block, categories, schedule, pause
   - [x] 1.5 Payments as approval requests
   - [ ] 1.6 Alerts: new device, night use, DNS bypass
-  - [ ] 1.7 Time-spent estimate
+  - [x] 1.7 Time-spent estimate
   - [ ] 1.8 "Day in the life" script + rule tests
 - [ ] Phase 2 — Local server + login
   - [ ] 2.1 Local web API over the engine
