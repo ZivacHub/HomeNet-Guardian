@@ -12,6 +12,7 @@ One-line purpose: a parent's home-network dashboard that needs nothing on the ch
 - Dev (both servers): `npm run dev` at the project root (filled in step 0.2)
 - Test: `cd backend && .venv/Scripts/python -m pytest`
 - Demo day: `python -m homenet.demo` (Phase 1)
+- Demo logins: demo/demo (Mom), dad/demo (Dad). The app simulates TODAY on the PC clock (D19); the DB is backend/data/homenet.db (git-ignored)
 
 ## Conventions
 - English everywhere: UI, README, code, comments (D3).
@@ -46,7 +47,7 @@ One-line purpose: a parent's home-network dashboard that needs nothing on the ch
 - UI work: see Design stack. DB: SQLite via Python's sqlite3. Docs/versions: context7.
 
 ## Current state
-- 2026-11-07: Phases 0-1 done (engine, simulator, rules, approvals, alerts, time estimate; 109 tests). Next: Phase 2 gate.
+- 2026-11-07: Phases 0-2 done (engine, simulator, local API, login, consent, clean-up; 160 tests). Next: Phase 3 gate (dashboard screens).
 
 ## How we work here (BUSNUS workflow v3, details in ~/.claude/CLAUDE.md)
 - docs/PRODUCT.md = the goal in Ivan's words (compass). docs/plan/BOARD.md = progress, in order. docs/DECISIONS.md = what Ivan decided.

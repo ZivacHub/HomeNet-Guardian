@@ -10,11 +10,12 @@ import threading
 from datetime import date, datetime, time, timedelta
 from typing import Callable
 
-from . import db, demo, engine
+from . import db, demo, engine, retention
 from .adapters.simulator import SimulatorAdapter
 
 PROCESSED_KEY = "sim_processed_until"
 MAX_CATCH_UP_DAYS = 7
+CLEANUP_EVERY = timedelta(hours=1)
 
 
 class Runtime:
@@ -25,6 +26,7 @@ class Runtime:
         self.seed = seed
         self.lock = threading.Lock()      # one shared sqlite connection: take this for any DB use
         self._adapters: dict[date, SimulatorAdapter] = {}
+        self._last_cleanup: datetime | None = None
         self.started = False
 
     def now(self) -> datetime:
@@ -78,6 +80,9 @@ class Runtime:
             last = datetime.combine(day, time(0, 0)) - timedelta(seconds=1)
         total += eng.run(self._adapter(now.date()), since=last, until=now)
         engine.expire_approvals(self.conn, now)
+        if self._last_cleanup is None or now - self._last_cleanup >= CLEANUP_EVERY:
+            retention.cleanup(self.conn, now)      # 30-day rule, on the simulation clock (D21)
+            self._last_cleanup = now
         self._save_processed(now)
         return total
 

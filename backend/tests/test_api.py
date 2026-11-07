@@ -20,6 +20,7 @@ def app():
 def login(c, username="demo", password="demo"):
     r = c.post("/api/auth/login", json={"username": username, "password": password})
     assert r.status_code == 200, r.text
+    assert c.post("/api/consent", json={"told_child": True}).status_code == 200
     return c
 
 
@@ -227,7 +228,7 @@ def test_alerts(client):
 def test_settings(client):
     j = client.get("/api/settings").json()
     assert j["retention_days"] == 30 and j["approval_minutes_default"] == 30
-    assert j["night_start"] == "23:00" and j["consent_confirmed"] is False
+    assert j["night_start"] == "23:00" and j["consent_confirmed"] is True
     r = client.patch("/api/settings", json={"retention_days": 90, "approval_minutes_default": 45})
     assert r.json()["retention_days"] == 90 and r.json()["approval_minutes_default"] == 45
     assert client.patch("/api/settings", json={"retention_days": 0}).status_code == 422

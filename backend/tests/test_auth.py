@@ -55,6 +55,9 @@ def test_login_cookie_flags_and_me(app):
     assert "HttpOnly" in cookie and "SameSite=strict" in cookie.replace("Strict", "strict")
     assert "Max-Age" not in cookie and "expires" not in cookie.lower()      # ends with the browser (D20)
     assert c.get("/api/auth/me").json()["parent"]["username"] == "demo"
+    r = c.get("/api/overview")                       # logged in, but the child has not been told yet
+    assert r.status_code == 403 and r.json()["detail"]["code"] == "consent_required"
+    assert c.post("/api/consent", json={"told_child": True}).status_code == 200
     assert c.get("/api/overview").status_code == 200
 
 
@@ -126,6 +129,7 @@ def test_forged_cookie_refused(app):
 def test_approval_records_the_parent_who_decided(app):
     c = TestClient(app)
     login(c, "dad", "demo")
+    c.post("/api/consent", json={"told_child": True})
     pending = c.get("/api/approvals", params={"status": "pending"}).json()["items"]
     assert pending
     r = c.post(f"/api/approvals/{pending[0]['id']}/approve", json={"minutes": 30})

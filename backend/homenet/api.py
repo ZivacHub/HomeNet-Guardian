@@ -6,12 +6,13 @@ from typing import Literal
 
 from fastapi import APIRouter, Depends, HTTPException, Query, Request
 
-from . import alerts, auth, categories as cats, db, engine, timeuse
+from . import alerts, auth, categories as cats, consent, db, engine, timeuse
 from .runtime import Runtime
 from .schemas import (ApproveBody, ChildPatch, DevicePatch, PauseBody, ResumeBody, RulePut,
                       ScheduleCreate, SchedulePatch, SettingsPatch)
 
-router = APIRouter(prefix="/api", dependencies=[Depends(auth.current_parent)])
+# login first, then "I told my child" (consent), both checked before the database lock is taken
+router = APIRouter(prefix="/api", dependencies=[Depends(auth.current_parent), Depends(consent.require_consent)])
 
 ONLINE_MINUTES = 10
 FIXED_CATEGORIES = (cats.EXPLICIT, cats.ENCRYPTED_DNS)

@@ -11,6 +11,8 @@ IDEA.md
 # Data (the database and any exports stay on this PC)
 *.db
 *.db-journal
+*.db-wal
+*.db-shm
 *.sqlite
 *.sqlite3
 *.pcap

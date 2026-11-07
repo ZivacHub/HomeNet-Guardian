@@ -67,7 +67,11 @@ def create_app(db_path: str = str(DEFAULT_DB), clock: Callable[[], datetime] | N
 
     from .api import router
     from .auth import router as auth_router
+    from .consent import router as consent_router
+    from .retention import router as data_router
     app.include_router(auth_router)
+    app.include_router(consent_router)
+    app.include_router(data_router)
     app.include_router(router)
     return app
 
