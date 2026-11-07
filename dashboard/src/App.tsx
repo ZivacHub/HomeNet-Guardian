@@ -5,19 +5,28 @@ import { useRoute, type RouteId } from './lib/routes'
 import { applyTheme, loadTheme, type Theme } from './lib/theme'
 import { Consent } from './pages/Consent'
 import { InProgress } from './pages/InProgress'
+import Activity from './pages/Activity'
+import Devices from './pages/Devices'
+import Overview from './pages/Overview'
+import Payments from './pages/Payments'
+import Rules from './pages/Rules'
+import { SCREEN_INFO } from './pages/screenInfo'
+import Settings from './pages/Settings'
+import Time from './pages/Time'
 import { Login } from './pages/Login'
 
 type Phase = 'loading' | 'offline' | 'login' | 'consent' | 'app'
 
-const SCREENS: Record<RouteId, { title: string; step: string; what: string }> = {
-  overview: { title: 'Overview', step: '3.2', what: 'Who is online, today per child, and warnings that need you.' },
-  devices: { title: 'Devices', step: '3.3', what: 'Every device on the home Wi-Fi, and whose it is.' },
-  activity: { title: 'Live activity', step: '3.4', what: 'Each site a device asks for, as it happens.' },
-  time: { title: 'Where time goes', step: '3.5', what: 'An estimate of time per category and site, for each child.' },
-  rules: { title: 'Rules', step: '3.6', what: 'Blocked categories, bedtimes and the pause button.' },
-  payments: { title: 'Payments & stores', step: '3.7', what: 'Store and payment sites wait for your OK.' },
-  reports: { title: 'Reports', step: '4.2', what: 'Weekly and monthly summaries.' },
-  settings: { title: 'Settings', step: '3.8', what: 'Records, parents, the family notice, and what this does not see.' },
+// One file per screen (pages/*.tsx). Reports arrives in Phase 4.
+const PAGES: Record<RouteId, () => React.JSX.Element> = {
+  overview: Overview,
+  devices: Devices,
+  activity: Activity,
+  time: Time,
+  rules: Rules,
+  payments: Payments,
+  reports: () => <InProgress {...SCREEN_INFO.reports} />,
+  settings: Settings,
 }
 
 export default function App() {
@@ -76,11 +85,12 @@ export default function App() {
   if (phase === 'login') return <Login onLoggedIn={(p) => { setParent(p); check() }} />
   if (phase === 'consent') return <Consent onConfirmed={() => setPhase('app')} onLogout={logout} />
 
+  const Page = PAGES[route]
   return (
     <>
       <TopBar route={route} parent={parent!} theme={theme} onTheme={setTheme} onLogout={logout} />
       <main id="main">
-        <InProgress {...SCREENS[route]} />
+        <Page key={route} />
       </main>
     </>
   )
