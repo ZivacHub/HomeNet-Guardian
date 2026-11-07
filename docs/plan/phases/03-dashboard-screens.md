@@ -24,3 +24,8 @@ Every screen: built with frontend-design + impeccable, checked with design-taste
 
 ## Phase gate record
 - Plain-words preview shown: 2026-11-07. Repos: GitHub "parental control dashboard" (5 repos, 0-1 stars; techguard MIT Pi-hole add-on: nothing to borrow), "network monitoring dashboard react" (3 repos, 0 stars). Skills: design stack already chosen (D10). Libraries: Recharts 3.10.1, lucide-react 1.70.0. Decisions asked: D22-D24. Ivan's go: 2026-11-07, "Go, start Phase 3".
+
+## Proof (Phase 3 close, 2026-11-07)
+- Every screen viewed in the browser at 1280 and 390 px, light and dark; `impeccable detect --json dashboard/src` = []; `npx tsc -b` and `npm run build` pass; dev-server log has no errors.
+- Live checks: assign device + undo (Devices), Blocked filter + URL (Live activity), pause Ana -> next lookup "Internet paused (Ana)", whole-home pause + resume (Rules), approve Luka -> "Approved until 18:46" + log (Payments), DELETE lock (Settings).
+- 3.9 polish (before -> after): button press translateY -> scale(0.97); hover only on mouse devices; Overview bars width -> transform; Payments refreshes the menu counter at once; tab title per screen; "Skip to content" link; no long dashes in visible text; earlier fixes: duplicate alert time, wrapped reasons, evening night band, payments log width, scoped focus rule.

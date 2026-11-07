@@ -40,7 +40,7 @@
 .ov-bars { list-style: none; margin: var(--s4) 0 0; padding: 0; display: grid; gap: var(--s3); }
 .ov-bar { display: grid; grid-template-columns: 120px 1fr 78px; gap: var(--s3); align-items: center; font-size: var(--t-sm); }
 .ov-bar-track { height: 8px; background: var(--surface-2); border-radius: var(--r-pill); overflow: hidden; }
-.ov-bar-fill { display: block; height: 100%; background: var(--accent); border-radius: var(--r-pill); transition: width 250ms var(--ease-out); }
+.ov-bar-fill { display: block; width: 100%; height: 100%; background: var(--accent); border-radius: var(--r-pill); transform-origin: left center; transition: transform 250ms var(--ease-out); }
 .ov-bar-min { text-align: right; color: var(--ink-2); }
 .ov-note { margin-top: var(--s4); color: var(--muted); font-size: var(--t-xs); }
 .ov-link { margin-top: var(--s3); text-decoration: none; }

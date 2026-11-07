@@ -147,7 +147,7 @@ function TodayPanel({ c, note }: { c: ChildToday; note: string }) {
             <li key={t.category} className="ov-bar">
               <span className="ov-bar-label">{categoryLabel(t.category)}</span>
               <span className="ov-bar-track" aria-hidden="true">
-                <span className="ov-bar-fill" style={{ width: `${Math.max(3, (t.minutes / max) * 100)}%` }} />
+                <span className="ov-bar-fill" style={{ transform: `scaleX(${Math.max(0.03, t.minutes / max)})` }} />
               </span>
               <span className="ov-bar-min num">{minutes(t.minutes)}</span>
             </li>

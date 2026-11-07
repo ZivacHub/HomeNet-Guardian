@@ -104,3 +104,12 @@
   .consent-head, .consent-lead, .tabs, .notice-actions, .consent-confirm, .consent-main h1 { display: none !important; }
   .panel { border: 0; box-shadow: none; }
 }
+
+/* keyboard users can jump past the menu */
+.skip-link {
+  position: fixed; top: 8px; left: 8px; z-index: 20; padding: 8px 14px; border-radius: var(--r-sm);
+  background: var(--accent); color: var(--accent-ink); font-weight: 600; text-decoration: none;
+  transform: translateY(-160%); transition: transform 160ms var(--ease-out);
+}
+.skip-link:focus-visible { transform: none; color: var(--accent-ink); }
+#main:focus { outline: none; }

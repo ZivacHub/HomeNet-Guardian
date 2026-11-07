@@ -21,7 +21,7 @@ export const categoryLabel = (c: string) => CATEGORY_LABEL[c] ?? c
 
 /** "2026-11-07T17:49:23" -> "17:49" (or with seconds). Times are already the home's local time. */
 export function clock(ts: string | null | undefined, seconds = false): string {
-  if (!ts) return '–'
+  if (!ts) return '-'
   return ts.slice(11, seconds ? 19 : 16)
 }
 

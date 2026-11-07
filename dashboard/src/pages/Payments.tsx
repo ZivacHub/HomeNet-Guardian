@@ -68,9 +68,11 @@ export default function Payments() {
       if (approve) {
         const r = await post<Approval>(`/approvals/${a.id}/approve`, { minutes: mins[a.id] ?? 30 })
         result = { kind: 'approved', text: `Approved until ${clock(r.approved_until)}` }
+        window.dispatchEvent(new Event('hg:approvals-changed'))
       } else {
         await post(`/approvals/${a.id}/deny`)
         result = { kind: 'denied', text: 'Denied' }
+        window.dispatchEvent(new Event('hg:approvals-changed'))
       }
     } catch (e) {
       result =
@@ -228,7 +230,7 @@ export default function Payments() {
                         <td>
                           {a.decided_by != null
                             ? parentName.get(a.decided_by) ?? 'A parent'
-                            : a.status === 'expired' ? 'Time ran out' : '–'}
+                            : a.status === 'expired' ? 'Time ran out' : '-'}
                         </td>
                         <td className="num mono">{clock(a.approved_until)}</td>
                       </tr>

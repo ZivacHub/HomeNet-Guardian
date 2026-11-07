@@ -47,7 +47,7 @@ One-line purpose: a parent's home-network dashboard that needs nothing on the ch
 - UI work: see Design stack. DB: SQLite via Python's sqlite3. Docs/versions: context7.
 
 ## Current state
-- 2026-11-07: Phases 0-2 done (engine, simulator, local API, login, consent, clean-up; 160 tests). Next: Phase 3 gate (dashboard screens).
+- 2026-11-07: Phases 0-3 done (engine, API, login, consent, 8-screen dashboard light/dark; 160 tests). Next: Phase 4 gate (Reports).
 
 ## How we work here (BUSNUS workflow v3, details in ~/.claude/CLAUDE.md)
 - docs/PRODUCT.md = the goal in Ivan's words (compass). docs/plan/BOARD.md = progress, in order. docs/DECISIONS.md = what Ivan decided.

@@ -37,6 +37,11 @@ export default function App() {
 
   useEffect(() => applyTheme(theme), [theme])
 
+  useEffect(() => {
+    const t = phase === 'app' ? SCREEN_INFO[route].title : phase === 'consent' ? 'Before you start' : 'Log in'
+    document.title = `${t} · HomeNet Guardian`
+  }, [phase, route])
+
   const check = useCallback(async () => {
     try {
       const me = await get<{ parent: Parent }>('/auth/me')
@@ -88,8 +93,11 @@ export default function App() {
   const Page = PAGES[route]
   return (
     <>
+      <a className="skip-link" href="#main" onClick={(e) => { e.preventDefault(); document.getElementById('main')?.focus() }}>
+        Skip to content
+      </a>
       <TopBar route={route} parent={parent!} theme={theme} onTheme={setTheme} onLogout={logout} />
-      <main id="main">
+      <main id="main" tabIndex={-1}>
         <Page key={route} />
       </main>
     </>

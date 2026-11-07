@@ -373,7 +373,7 @@ export default function Activity() {
           <div className="table-wrap act-scroll" ref={scroller} onScroll={onScroll}>
             {scrolled && pending.length > 0 && (
               <button className="btn btn-primary act-jump" onClick={jumpToTop}>
-                <ArrowUp /> {pending.length} new {'—'} jump to top
+                <ArrowUp /> {pending.length} new. Jump to top
               </button>
             )}
             <table className="table act-table">

@@ -32,9 +32,11 @@ function usePendingApprovals(): number {
         .catch(() => {})
     load()
     const t = window.setInterval(load, 10_000)
+    window.addEventListener('hg:approvals-changed', load)   // Payments answered a request
     return () => {
       alive = false
       window.clearInterval(t)
+      window.removeEventListener('hg:approvals-changed', load)
     }
   }, [])
   return n

@@ -28,7 +28,7 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
   - [x] 2.2 Parent login (up to 2 parents, demo/demo)
   - [x] 2.3 First-start "I told my child" + notice template
   - [x] 2.4 30-day log cleanup + "delete everything"
-- [~] Phase 3 — Dashboard screens
+- [x] Phase 3 — Dashboard screens
   - [x] 3.1 React app shell, navigation, light/dark themes
   - [x] 3.2 Overview screen
   - [x] 3.3 Devices screen
@@ -37,7 +37,7 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
   - [x] 3.6 Rules screen
   - [x] 3.7 Payments & stores screen
   - [x] 3.8 Settings & "What this does NOT see"
-  - [ ] 3.9 Design review and polish pass
+  - [x] 3.9 Design review and polish pass
 - [ ] Phase 4 — Reports
   - [ ] 4.1 Weekly and monthly report numbers
   - [ ] 4.2 Reports screen + printable HTML export
