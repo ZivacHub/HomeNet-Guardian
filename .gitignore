@@ -1,0 +1,38 @@
+# Private notes that stay on this PC (D15)
+IDEA.md
+
+# Secrets and local settings
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Data (the database and any exports stay on this PC)
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.pcap
+*.pcapng
+exports/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Node / build
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Tools and editors
+.playwright-cli/
+.claude/settings.local.json
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+*.log

@@ -1,0 +1,13 @@
+{
+  "name": "homenet-guardian",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "setup": "python -m venv backend\\.venv && backend\\.venv\\Scripts\\python -m pip install -r backend\\requirements.txt && npm install --prefix dashboard",
+    "dev": "concurrently -k -n api,web \"cd backend && .venv\\Scripts\\python -m uvicorn homenet.app:app --host 127.0.0.1 --port 8000\" \"npm run dev --prefix dashboard\"",
+    "test": "cd backend && .venv\\Scripts\\python -m pytest"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
