@@ -1,0 +1,48 @@
+.pay-note { margin-bottom: var(--s5); }
+.pay-section { margin-bottom: var(--s5); overflow: hidden; }
+.pay-skel { padding: var(--s5); }
+.pay-skel-row { height: 64px; }
+.pay-skel-table { height: 120px; }
+.pay-retry { margin-left: auto; }
+
+.pay-list { list-style: none; margin: 0; padding: 0; }
+.pay-row {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s4); flex-wrap: wrap;
+  padding: var(--s4) var(--s5); border-bottom: 1px solid var(--line);
+  animation: pay-in 200ms var(--ease-out);
+}
+.pay-row:last-child { border-bottom: 0; }
+.pay-row-done { background: var(--surface-2); }
+.pay-device { font-weight: 600; }
+.pay-child { color: var(--muted); font-weight: 400; }
+.pay-site { margin-top: 2px; color: var(--ink-2); }
+.pay-when { margin-top: 2px; font-size: var(--t-sm); color: var(--muted); }
+.pay-actions { display: grid; gap: var(--s2); justify-items: end; }
+.pay-buttons { display: flex; align-items: center; gap: var(--s2); flex-wrap: wrap; }
+.pay-select { width: auto; height: 36px; min-width: 84px; }
+.pay-msg { font-size: var(--t-sm); color: var(--block); }
+
+.pay-result {
+  display: inline-flex; align-items: center; gap: var(--s2); font-weight: 600;
+  animation: pay-in 200ms var(--ease-out);
+}
+.pay-result svg { width: 18px; height: 18px; }
+.pay-result-approved { color: var(--ok); }
+.pay-result-denied { color: var(--block); }
+
+.pay-how { padding: 0 var(--s1); max-width: 70ch; }
+.pay-how h2 { margin-bottom: var(--s2); }
+.pay-how ul { margin: 0; padding-left: var(--s5); color: var(--ink-2); display: grid; gap: var(--s1); }
+
+@keyframes pay-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .pay-row, .pay-result { animation: none; }
+}
+@media (max-width: 640px) {
+  .pay-row { padding: var(--s4); }
+  .pay-actions { justify-items: start; }
+}
+
+/* decision log: keep columns readable on phones; the table scrolls sideways instead */
+.pay-log-table { min-width: 680px; }
+.pay-log-table .domain { word-break: normal; white-space: nowrap; }

@@ -1,0 +1,93 @@
+/* Settings screen (plan step 3.8). Composes the shared components in ui.css. */
+
+.set-layout { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: var(--s6); align-items: start; }
+.set-content { display: grid; gap: var(--s5); max-width: 820px; }
+
+.set-nav { position: sticky; top: 88px; display: grid; gap: 2px; }
+.set-nav a {
+  padding: var(--s2) var(--s3); border-radius: var(--r-sm); color: var(--ink-2);
+  font-size: var(--t-sm); font-weight: 500; text-decoration: none;
+  transition: background-color 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+.set-nav a:hover { background: var(--surface-2); color: var(--ink); }
+.set-nav a:focus-visible { outline: none; box-shadow: var(--focus); }
+.set-nav a[aria-current="true"] { background: var(--accent-soft); color: var(--accent); }
+
+.set-section { scroll-margin-top: 88px; overflow: hidden; }
+.set-section h3 { font-size: var(--t-md); font-weight: 600; }
+
+.set-intro p { color: var(--ink-2); max-width: 64ch; }
+.set-stack { display: grid; gap: var(--s3); }
+.set-skeletons { display: grid; gap: var(--s3); }
+.set-retry { margin-top: var(--s3); }
+.set-tight { padding-top: 0; }
+.set-pad-x { padding: 0 var(--s5) var(--s3); }
+
+/* what it does not see */
+.set-limits { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.set-limits li { display: flex; gap: var(--s4); padding: var(--s4) var(--s5); border-bottom: 1px solid var(--line); }
+.set-limit-icon {
+  flex: none; display: grid; place-items: center; width: 36px; height: 36px;
+  border-radius: var(--r-sm); background: var(--surface-2); color: var(--ink-2);
+}
+.set-limit-icon svg { width: 18px; height: 18px; }
+.set-limits p { margin-top: 2px; color: var(--ink-2); max-width: 62ch; }
+.set-router p { color: var(--muted); max-width: 64ch; }
+
+/* shared form bits */
+.set-row { display: flex; align-items: flex-end; gap: var(--s3); flex-wrap: wrap; }
+.set-inline-field { min-width: 220px; }
+.set-inline-field .select { width: auto; min-width: 220px; }
+.set-note { min-height: 40px; display: inline-flex; align-items: center; font-size: var(--t-sm); color: var(--ok); }
+.set-note[data-kind="error"] { color: var(--block); }
+.set-hint { font-size: var(--t-sm); color: var(--muted); max-width: 64ch; }
+.set-hint[data-kind="error"] { color: var(--block); }
+.set-summary { color: var(--ink); }
+
+/* delete everything */
+.set-danger { display: grid; gap: var(--s3); padding: var(--s5); border-top: 1px solid var(--line); background: var(--block-soft); }
+.set-danger-head { display: flex; align-items: center; gap: var(--s2); color: var(--block); }
+.set-danger-head svg { width: 18px; height: 18px; }
+.set-danger p { max-width: 64ch; }
+.set-danger .set-hint { color: var(--ink-2); }
+.set-confirm { display: flex; align-items: flex-end; gap: var(--s3); flex-wrap: wrap; }
+.set-confirm .field { min-width: 240px; }
+
+/* family notice */
+.set-notice-text { padding-top: var(--s4); }
+.set-actions { display: flex; gap: var(--s2); flex-wrap: wrap; padding: 0 var(--s5) var(--s5); }
+.set-actions-inline { display: flex; gap: var(--s2); flex-wrap: wrap; }
+.set-consent { display: grid; gap: var(--s3); justify-items: start; padding: var(--s5); border-top: 1px solid var(--line); }
+.set-confirmed { color: var(--ink-2); }
+.set-withdraw { display: grid; gap: var(--s3); }
+.set-withdraw p { max-width: 64ch; }
+
+/* parents */
+.set-parents { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.set-parents li {
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--s3); flex-wrap: wrap;
+  padding: var(--s3) var(--s5); border-bottom: 1px solid var(--line);
+}
+.set-parent-name { font-weight: 600; }
+.set-parent-user { color: var(--muted); font-size: var(--t-sm); }
+.set-form { display: grid; gap: var(--s4); }
+.set-form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--s4); }
+.set-pass { display: flex; gap: var(--s2); }
+.set-pass .btn-icon { flex: none; }
+
+@media (max-width: 860px) {
+  .set-layout { grid-template-columns: minmax(0, 1fr); gap: var(--s4); }
+  .set-nav { display: none; }
+}
+@media (max-width: 640px) {
+  .set-limits li, .set-parents li { padding-left: var(--s4); padding-right: var(--s4); }
+  .set-danger, .set-consent { padding: var(--s4); }
+  .set-actions { padding: 0 var(--s4) var(--s4); }
+  .set-pad-x { padding: 0 var(--s4) var(--s3); }
+  .set-inline-field, .set-inline-field .select { min-width: 0; width: 100%; }
+}
+
+@media print {
+  .set-nav, .set-section:not(#family-notice), .set-actions, .set-consent, .set-intro { display: none !important; }
+  .set-layout { display: block; }
+}

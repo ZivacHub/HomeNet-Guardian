@@ -33,10 +33,10 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
   - [x] 3.2 Overview screen
   - [x] 3.3 Devices screen
   - [x] 3.4 Live activity screen (Wireshark-style table)
-  - [ ] 3.5 Where time goes screen
-  - [ ] 3.6 Rules screen
-  - [ ] 3.7 Payments & stores screen
-  - [ ] 3.8 Settings & "What this does NOT see"
+  - [x] 3.5 Where time goes screen
+  - [x] 3.6 Rules screen
+  - [x] 3.7 Payments & stores screen
+  - [x] 3.8 Settings & "What this does NOT see"
   - [ ] 3.9 Design review and polish pass
 - [ ] Phase 4 — Reports
   - [ ] 4.1 Weekly and monthly report numbers
