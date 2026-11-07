@@ -84,3 +84,20 @@ Layout: the two sections below. When a decision is answered, move its block from
 ## D17 — Names of the pretend family   [decided 2026-11-07]
 **The owner said:** "Mom, Dad, Ana (14), Luka (9)" (2026-11-07)
 **Result:** simulator family = Mom, Dad, Ana (14), Luka (9).
+
+## D18 — Project audit before Phase 2   [decided 2026-11-07]
+**The owner said:** "Skip it for now" (2026-11-07)
+**Result:** no AUDIT.md now; Phase 5 still reviews the whole project. The start-up check will keep reminding; this entry is the answer.
+
+## D19 — How the pretend day plays in the app   [decided 2026-11-07]
+**Options:** start 16:00 and play 10x faster; whole day loaded; follow the PC's clock.
+**The owner said:** "Follow your PC's clock" (2026-11-07), and for the date: "Use today's date" (2026-11-07)
+**Result:** the app simulates TODAY with the real weekday, and shows events up to the PC's current time; new events appear in real time. Weekend rules apply on Fri/Sat nights, so the story differs by weekday. Tests keep the fixed Thursday 2026-11-05. Consequence for Phase 6: screenshots/GIF of evening moments must be taken in the evening (raised again at the Phase 6 gate).
+
+## D20 — Stay logged in   [decided 2026-11-07]
+**The owner said:** "Until the browser closes" (2026-11-07)
+**Result:** session cookie without an expiry date (ends when the browser closes); server also ends sessions idle for 8 hours.
+
+## D21 — Phase 2 defaults   [decided 2026-11-07]
+**The owner said:** "Accept all" (2026-11-07)
+**Result:** pwdlib + Argon2 password hashing (FastAPI's recommendation); demo logins demo/demo = Mom and dad/demo = Dad; login page shows "Demo login: demo / demo"; 5 wrong passwords lock login for 1 minute; 30-day clean-up uses the simulation clock.

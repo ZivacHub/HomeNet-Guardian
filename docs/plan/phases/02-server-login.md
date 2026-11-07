@@ -14,7 +14,7 @@ Put the brain behind a small local web server that only the parent can use. At t
 **2.4 30-day cleanup + "delete everything"** — Grade: strong (data deletion). Done when: records older than the setting (default 30 days) are removed automatically; "delete everything" asks to type DELETE, then wipes activity, alerts and requests (keeps accounts). Test: pytest: 31-day-old records gone; after delete-all the tables are empty.
 
 ## Risks and open points (only for this phase)
-- none yet
+- D19: the app simulates today's date at the PC's clock (tests keep Thursday 2026-11-05). 2.1 needs a 'simulation clock' that feeds the engine events up to now, every few seconds.
 
 ## Phase gate record
-- (filled at the gate)
+- Plain-words preview shown: 2026-11-07. Skills/repos search: skills "fastapi auth" (Auth0 skill for a paid service, 3 small ones with 4-41 installs: not adopted); GitHub "fastapi session cookie login" (nothing); context7 FastAPI docs: pwdlib + Argon2 recommended (pwdlib 0.3.1). Decisions asked: D18-D21. Ivan's go: (waiting)
