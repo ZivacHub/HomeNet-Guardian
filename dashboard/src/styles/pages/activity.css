@@ -1,0 +1,78 @@
+/* Live activity (plan step 3.4). Composes ui.css; only adds what this screen needs. */
+
+.act-live { display: flex; align-items: center; gap: var(--s3); flex-wrap: wrap; }
+.act-status { display: inline-flex; align-items: center; gap: var(--s2); font-size: var(--t-sm); color: var(--muted); }
+.act-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--line-strong); }
+.act-status.is-live { color: var(--ink-2); }
+.act-status.is-live .act-dot { background: var(--ok); }
+
+/* ---- filter bar ---- */
+.act-filters {
+  display: grid; gap: var(--s3); align-items: end; margin-bottom: var(--s4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.act-label { font-size: var(--t-sm); font-weight: 500; color: var(--ink-2); }
+.act-search { grid-column: 1 / -1; }
+.act-clear { justify-self: start; }
+
+.act-seg {
+  display: inline-flex; height: 40px; padding: 3px; gap: 2px; width: 100%;
+  background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--r-sm);
+}
+.act-seg button {
+  flex: 1; padding: 0 var(--s3); border: 0; border-radius: 4px; background: transparent;
+  color: var(--ink-2); font-size: var(--t-sm); font-weight: 600; cursor: pointer;
+  transition: background-color 160ms var(--ease-out), color 160ms var(--ease-out);
+}
+.act-seg button:hover { color: var(--ink); }
+.act-seg button.is-on { background: var(--surface); color: var(--accent); box-shadow: var(--shadow-1); }
+.act-seg button:focus-visible { outline: none; box-shadow: var(--focus); }
+
+@media (min-width: 900px) {
+  .act-filters { grid-template-columns: 1fr 1fr 1.1fr 1fr 1.5fr auto; }
+  .act-search { grid-column: auto; }
+}
+
+.act-note { margin-bottom: var(--s3); }
+
+/* ---- table ---- */
+.act-panel { overflow: hidden; position: relative; }
+.act-scroll { max-height: min(68vh, 760px); overflow: auto; position: relative; }
+.act-table { min-width: 880px; }
+.act-table td { padding: 7px var(--s4); height: 38px; white-space: nowrap; }
+.act-table td:nth-child(3) { white-space: normal; min-width: 180px; }
+.act-c-time { width: 92px; }
+.act-muted { color: var(--muted); }
+.act-table td:nth-child(4) { color: var(--muted); }
+.act-skel { height: 14px; }
+
+.act-table tr.is-blocked td { background: color-mix(in srgb, var(--block-soft) 55%, transparent); }
+.act-table tr.is-blocked:hover td { background: var(--block-soft); }
+
+.act-result { display: flex; align-items: center; gap: var(--s3); }
+.act-reason { color: var(--muted); font-size: var(--t-xs); white-space: normal; max-width: 34ch; line-height: 1.35; }
+
+/* new rows: slide down 6 px and fade the accent highlight away */
+.act-table tr.is-new td {
+  animation: act-slide 200ms var(--ease-out), act-flash 1200ms var(--ease-out);
+}
+@keyframes act-slide { from { transform: translateY(-6px); } to { transform: none; } }
+@keyframes act-flash { from { background-color: var(--accent-soft); } to { background-color: transparent; } }
+@media (prefers-reduced-motion: reduce) {
+  .act-table tr.is-new td { animation: none; }
+}
+
+.act-jump {
+  position: sticky; top: 44px; z-index: 2; display: flex; margin: var(--s2) auto 0;
+  width: max-content; box-shadow: var(--shadow-2);
+}
+
+/* ---- states and footer ---- */
+.act-state { display: grid; gap: var(--s3); justify-items: start; padding: var(--s5); }
+.act-empty-btn { margin-top: var(--s4); }
+.act-foot {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s3);
+  padding: var(--s3) var(--s4); border-top: 1px solid var(--line); font-size: var(--t-sm);
+}
+.act-footnote { margin-top: var(--s3); font-size: var(--t-sm); color: var(--muted); }
+.act-footnote a { color: var(--accent); }

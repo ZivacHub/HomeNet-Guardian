@@ -1,0 +1,63 @@
+/* Devices screen (plan step 3.3). Composes the shared components in ui.css. */
+
+.dev-count { color: var(--muted); font-size: var(--t-sm); }
+.dev-count strong { color: var(--ink); font-weight: 600; }
+
+.dev-warn { margin-bottom: var(--s4); }
+.dev-stack { display: grid; gap: var(--s5); }
+
+.dev-table { min-width: 720px; }
+.dev-table th.num, .dev-table td.num { text-align: right; }
+
+.dev-device { display: flex; align-items: center; gap: var(--s3); min-width: 220px; }
+.dev-icon {
+  flex: none; display: grid; place-items: center; width: 32px; height: 32px;
+  border-radius: var(--r-sm); background: var(--surface-2); color: var(--ink-2);
+}
+.dev-icon svg { width: 18px; height: 18px; }
+.dev-name { font-weight: 600; overflow-wrap: anywhere; }
+.dev-meta { display: block; margin-top: 2px; font-size: var(--t-xs); color: var(--muted); overflow-wrap: anywhere; }
+.dev-meta .mono + .mono::before { content: " · "; font-family: var(--font); }
+
+.dev-owner { min-width: 170px; display: grid; gap: 4px; }
+.dev-owner .select { height: 34px; min-width: 150px; }
+.dev-status { display: grid; gap: 4px; justify-items: start; min-width: 120px; }
+
+.dev-note { font-size: var(--t-xs); color: var(--ok); }
+.dev-note[data-kind="error"] { color: var(--block); }
+
+.dev-actions { display: flex; gap: var(--s2); align-items: center; flex-wrap: wrap; min-width: 190px; }
+.dev-actions .btn { height: 32px; padding: 0 var(--s3); }
+.dev-rename { display: grid; gap: 4px; min-width: 260px; }
+.dev-rename-row { display: flex; gap: var(--s2); align-items: center; }
+.dev-rename .input { height: 32px; min-width: 120px; }
+.dev-rename .btn { height: 32px; padding: 0 var(--s3); }
+
+.dev-foot {
+  margin: 0; padding: var(--s3) var(--s5); border-top: 1px solid var(--line);
+  color: var(--muted); font-size: var(--t-sm);
+}
+
+.dev-skel-row {
+  display: flex; align-items: center; gap: var(--s4);
+  padding: var(--s3) var(--s5); border-bottom: 1px solid var(--line);
+}
+.dev-skel-row:last-child { border-bottom: 0; }
+
+/* children and age profiles */
+.dev-kids { list-style: none; margin: 0; padding: 0; }
+.dev-kid {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s4);
+  padding: var(--s3) var(--s5); border-bottom: 1px solid var(--line); flex-wrap: wrap;
+}
+.dev-kid:last-child { border-bottom: 0; }
+.dev-kid-name { font-weight: 600; }
+.dev-kid-age { color: var(--muted); margin-left: var(--s2); }
+.dev-kid-ctl { display: grid; gap: 4px; justify-items: end; }
+.dev-kid-ctl .select { width: 200px; height: 36px; }
+
+@media (max-width: 640px) {
+  .dev-foot, .dev-kid, .dev-skel-row { padding-left: var(--s4); padding-right: var(--s4); }
+  .dev-kid-ctl { justify-items: start; width: 100%; }
+  .dev-kid-ctl .select { width: 100%; }
+}

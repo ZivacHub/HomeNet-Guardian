@@ -31,8 +31,8 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
 - [~] Phase 3 — Dashboard screens
   - [x] 3.1 React app shell, navigation, light/dark themes
   - [x] 3.2 Overview screen
-  - [ ] 3.3 Devices screen
-  - [ ] 3.4 Live activity screen (Wireshark-style table)
+  - [x] 3.3 Devices screen
+  - [x] 3.4 Live activity screen (Wireshark-style table)
   - [ ] 3.5 Where time goes screen
   - [ ] 3.6 Rules screen
   - [ ] 3.7 Payments & stores screen
