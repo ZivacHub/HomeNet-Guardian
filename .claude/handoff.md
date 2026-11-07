@@ -15,7 +15,7 @@ A parent's dashboard for the home network that needs nothing on the child's devi
 
 ## Next steps (strictly in order; step 1 is where the next session starts)
 1. 4.1 Weekly and monthly report numbers + 4-week history at first start (D25: past days' requests answered, past alerts marked seen) — done when: pytest on a generated month
-   Read first: docs/plan/phases/04-reports.md, backend/homenet/runtime.py, backend/homenet/timeuse.py
+   Read first: docs/plan/phases/04-reports.md, backend/homenet/runtime.py
 2. 4.2 Reports screen + printable HTML export — done when: screenshot; export opens offline; retake docs/screenshots with a reports picture
    Read first: docs/plan/phases/04-reports.md, docs/reference/DESIGN.md
 3. Phase 5: 5.1 code security review, 5.2 probes on 127.0.0.1 — done when: findings and fixes in docs/reference/SECURITY_CHECKLIST.md; then update README status lines
