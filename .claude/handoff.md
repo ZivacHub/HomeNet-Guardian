@@ -1,5 +1,5 @@
 # Handoff: HomeNet Guardian (folder Family_WiFi)   (updated 2026-11-07 18:00)
-Git: main @ HASH "Phase 2 closed: consent, clean-up, delete everything" · pushed: yes (https://github.com/ZivacHub/HomeNet-Guardian, PUBLIC) · uncommitted: none
+Git: main @ db0697f "Phase 2 closed: consent, clean-up, delete everything" · pushed: yes (https://github.com/ZivacHub/HomeNet-Guardian, PUBLIC) · uncommitted: none
 
 ## Where we are in the plan
 Phase 2 of 7 — Local server + login is DONE. Steps done 16/34. Next per plan: Phase 3 gate, then 3.1 React app shell, navigation, light/dark themes.
