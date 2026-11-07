@@ -29,7 +29,7 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
   - [x] 2.3 First-start "I told my child" + notice template
   - [ ] 2.4 30-day log cleanup + "delete everything"
 - [~] Phase 3 — Dashboard screens
-  - [ ] 3.1 React app shell, navigation, light/dark themes
+  - [x] 3.1 React app shell, navigation, light/dark themes
   - [ ] 3.2 Overview screen
   - [ ] 3.3 Devices screen
   - [ ] 3.4 Live activity screen (Wireshark-style table)

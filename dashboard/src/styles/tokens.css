@@ -1,0 +1,75 @@
+/* HomeNet Guardian design tokens (D22: clean product, blue; D7: light default + dark).
+   Every screen uses these names; never hard-code a colour in a component. */
+
+:root {
+  color-scheme: light;
+
+  /* surfaces */
+  --bg: #f6f8fb;            /* cool paper: the page */
+  --surface: #ffffff;       /* panels and tables */
+  --surface-2: #eef2f8;     /* second neutral layer: top bar, table head, inputs */
+  --line: #e1e7ef;
+  --line-strong: #c9d3e0;
+
+  /* text */
+  --ink: #0f1b2d;           /* deep navy */
+  --ink-2: #3b4a60;
+  --muted: #5b6b82;
+
+  /* router-LED blue */
+  --accent: #2457d6;
+  --accent-hover: #1d47b3;
+  --accent-ink: #ffffff;
+  --accent-soft: #e6edfc;
+
+  /* states */
+  --ok: #1f8a5b;      --ok-soft: #e3f4ec;
+  --block: #c8372d;   --block-soft: #fbe9e7;
+  --warn: #9a6414;    --warn-soft: #fbf0dc;
+  --info: var(--accent); --info-soft: var(--accent-soft);
+
+  --focus: 0 0 0 3px color-mix(in srgb, var(--accent) 35%, transparent);
+  --shadow-1: 0 1px 2px rgb(15 27 45 / 0.06), 0 1px 1px rgb(15 27 45 / 0.04);
+  --shadow-2: 0 8px 24px -8px rgb(15 27 45 / 0.18), 0 2px 6px rgb(15 27 45 / 0.06);
+
+  /* type: IBM Plex Sans for the interface, Plex Mono only for network data (domains, MACs, times) */
+  --font: "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  --t-xs: 0.75rem;    /* 12 */
+  --t-sm: 0.8125rem;  /* 13 */
+  --t-md: 0.9375rem;  /* 15 body */
+  --t-lg: 1.0625rem;  /* 17 */
+  --t-xl: 1.375rem;   /* 22 page titles */
+  --t-2xl: 1.75rem;   /* 28 */
+
+  /* space (4px grid) */
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px;
+
+  --r-sm: 6px;    /* controls */
+  --r-md: 10px;   /* panels */
+  --r-pill: 999px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --page-max: 1200px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0d1522;
+  --surface: #131d2e;
+  --surface-2: #18243a;
+  --line: #22304a;
+  --line-strong: #2f4060;
+  --ink: #e6ecf5;
+  --ink-2: #c3cede;
+  --muted: #93a2b8;
+  --accent: #7a9bff;
+  --accent-hover: #93afff;
+  --accent-ink: #0d1522;
+  --accent-soft: #1c2b4d;
+  --ok: #4cc38a;     --ok-soft: #133426;
+  --block: #ff7a6e;  --block-soft: #3a1a1a;
+  --warn: #e7b15a;   --warn-soft: #362a14;
+  --shadow-1: 0 1px 2px rgb(0 0 0 / 0.4);
+  --shadow-2: 0 10px 30px -10px rgb(0 0 0 / 0.6), 0 2px 6px rgb(0 0 0 / 0.3);
+}
