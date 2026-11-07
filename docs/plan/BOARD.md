@@ -28,7 +28,7 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
   - [x] 2.2 Parent login (up to 2 parents, demo/demo)
   - [x] 2.3 First-start "I told my child" + notice template
   - [ ] 2.4 30-day log cleanup + "delete everything"
-- [ ] Phase 3 — Dashboard screens
+- [~] Phase 3 — Dashboard screens
   - [ ] 3.1 React app shell, navigation, light/dark themes
   - [ ] 3.2 Overview screen
   - [ ] 3.3 Devices screen
@@ -63,3 +63,4 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
 ## Change log
 - 2026-11-07 (Claude proposed, Ivan approved the phase list: "Yes, write the steps"): plan v1 with 7 phases; steps waiting for approval.
 - 2026-11-07 (Ivan: "Approve, start Phase 0"): plan v1 approved with its grades (6 light, 17 standard, 11 strong).
+- 2026-11-07 (Ivan chose the top-navigation preview, D22): step 3.1 uses a top navigation bar instead of the side menu.

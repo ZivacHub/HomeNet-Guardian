@@ -101,3 +101,16 @@ Layout: the two sections below. When a decision is answered, move its block from
 ## D21 — Phase 2 defaults   [decided 2026-11-07]
 **The owner said:** "Accept all" (2026-11-07)
 **Result:** pwdlib + Argon2 password hashing (FastAPI's recommendation); demo logins demo/demo = Mom and dad/demo = Dad; login page shows "Demo login: demo / demo"; 5 wrong passwords lock login for 1 minute; 30-day clean-up uses the simulation clock.
+
+## D22 — Dashboard feel   [decided 2026-11-07]
+**Options:** calm home + sharp network (warm, green); clean product, blue; control room, dark first.
+**The owner said:** "Clean product, blue" (2026-11-07), choosing the preview with a top navigation bar and white cards
+**Result:** white, crisp, blue accent, familiar product look (like router/banking apps); navigation across the top (per the chosen preview, instead of the side menu in the plan); light default + dark switch (D7).
+
+## D23 — Adult site names in tables   [decided 2026-11-07]
+**The owner said:** "Hidden by default" (2026-11-07)
+**Result:** explicit domains show as "Explicit site (hidden)" with a "show" click; screenshots and the GIF never show them.
+
+## D24 — Phase 3 defaults   [decided 2026-11-07]
+**The owner said:** "Accept all" (2026-11-07)
+**Result:** lucide-react icons (MIT); fonts bundled into the project (no outside requests at runtime); works on phone width; small quick animations only (new live rows, approve feedback); theme choice remembered.
