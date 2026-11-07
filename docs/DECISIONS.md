@@ -75,3 +75,12 @@ Layout: the two sections below. When a decision is answered, move its block from
 **Options:** code + plan without job notes; only code + README; everything as is.
 **The owner said:** "Code + plan, no job notes" (2026-11-07)
 **Result:** IDEA.md is git-ignored (stays on Ivan's PC). Tracked files use neutral words instead of the company name, application date and CV. Plan and decision log stay public.
+
+## D16 — Where the adult-site list lives   [decided 2026-11-07]
+**Options:** inside the repo compressed; or downloaded on first setup.
+**The owner said:** "Inside the repo, compressed" (2026-11-07)
+**Result:** only the MIT-licensed parts of StevenBlack's porn extension (Sinfonietta, Clefspeare13 pornhosts, BigDargon hostsVN; 76,345 domains, ~0.4 MB gzip) bundled in backend/homenet/data/ with a NOTICE crediting each; CC BY 4.0 parts (tiuxo, brijrajparmar27) left out. A small update command can refresh it.
+
+## D17 — Names of the pretend family   [decided 2026-11-07]
+**The owner said:** "Mom, Dad, Ana (14), Luka (9)" (2026-11-07)
+**Result:** simulator family = Mom, Dad, Ana (14), Luka (9).
