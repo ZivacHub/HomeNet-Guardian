@@ -76,4 +76,20 @@ def create_app(db_path: str = str(DEFAULT_DB), clock: Callable[[], datetime] | N
     return app
 
 
-app = create_app()
+def _from_env() -> dict:
+    """Picture runs only (D26): HOMENET_DB = a separate database file; HOMENET_CLOCK_START =
+    ISO time the simulated clock starts at; HOMENET_CLOCK_SPEED = how fast it runs (0 = stopped).
+    Without these variables the app follows the PC clock (D19)."""
+    import os
+    kw: dict = {}
+    if os.environ.get("HOMENET_DB"):
+        kw["db_path"] = os.environ["HOMENET_DB"]
+    start = os.environ.get("HOMENET_CLOCK_START")
+    if start:
+        t0, real0 = datetime.fromisoformat(start), datetime.now()
+        speed = float(os.environ.get("HOMENET_CLOCK_SPEED", "1"))
+        kw["clock"] = lambda: t0 + (datetime.now() - real0) * speed
+    return kw
+
+
+app = create_app(**_from_env())

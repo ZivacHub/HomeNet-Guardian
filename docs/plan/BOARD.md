@@ -4,6 +4,7 @@ Goal and non-negotiables: docs/PRODUCT.md. Every decision: docs/DECISIONS.md. De
 This file stays SMALL on purpose: the tick-list, the rules and the change log. It is read at the start of every session.
 
 ## Status board
+Focus: Phase 6 first, then Phase 4 and 5 (Ivan, 2026-11-07).
 Legend: `[ ]` not started · `[~]` in progress · `[x]` done (proof in the step) · `[-]` dropped (reason in the Change log).
 This board is the ONLY place that tracks progress. Tick a step in the same change set that finishes it. A script reads it
 (phases = top-level lines, steps = indented lines), so keep exactly this shape. Each phase title starts with `Phase <number>`
@@ -38,17 +39,17 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
   - [x] 3.7 Payments & stores screen
   - [x] 3.8 Settings & "What this does NOT see"
   - [x] 3.9 Design review and polish pass
-- [~] Phase 4 — Reports
+- [ ] Phase 4 — Reports
   - [ ] 4.1 Weekly and monthly report numbers
   - [ ] 4.2 Reports screen + printable HTML export
 - [ ] Phase 5 — Security check
   - [ ] 5.1 Code security review + fixes
   - [ ] 5.2 Attack the running app on localhost + fixes
-- [ ] Phase 6 — Showcase on GitHub
-  - [ ] 6.1 How-it-works diagram
-  - [ ] 6.2 Screenshots of every screen
-  - [ ] 6.3 Animated GIF
-  - [ ] 6.4 README: what, how it works, OpenWrt guide, limits
+- [~] Phase 6 — Showcase on GitHub
+  - [x] 6.1 How-it-works diagram
+  - [x] 6.2 Screenshots of every screen
+  - [x] 6.3 Animated GIF
+  - [x] 6.4 README: what, how it works, OpenWrt guide, limits
   - [ ] 6.5 Private-data scan, push, check the GitHub page
 
 ## Rules for this plan
@@ -65,3 +66,4 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
 - 2026-11-07 (Ivan: "Approve, start Phase 0"): plan v1 approved with its grades (6 light, 17 standard, 11 strong).
 - 2026-11-07 (Ivan chose the top-navigation preview, D22): step 3.1 uses a top navigation bar instead of the side menu.
 - 2026-11-07 (Claude, correction): step 2.4 ticked; it was finished and tested at Phase 2 close (tests/test_retention.py, 6 tests) but the tick command missed the wording.
+- 2026-11-07 (Ivan: "Focus on finishing the git look and images"): Phase 6 (GitHub page + pictures) is done before Phases 4 and 5; the page marks Reports and the security check as in progress until they are done.

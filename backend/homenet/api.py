@@ -388,6 +388,12 @@ def patch_settings(body: SettingsPatch, rt: Runtime = RT):
     return _settings(rt)
 
 
+@router.get("/clock")
+def clock(rt: Runtime = RT):
+    """The simulated "now" the whole app uses (the PC clock, or a set clock in a picture run)."""
+    return {"now": engine.iso(rt.now())}
+
+
 @router.get("/meta")
 def meta(rt: Runtime = RT):
     return {

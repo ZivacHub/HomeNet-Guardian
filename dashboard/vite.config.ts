@@ -9,7 +9,8 @@ export default defineConfig({
     port: 5173,
     strictPort: true,
     proxy: {
-      '/api': 'http://127.0.0.1:8000',
+      // HG_API lets a separate picture run (D26) use its own backend
+      '/api': process.env.HG_API ?? 'http://127.0.0.1:8000',
     },
   },
 })

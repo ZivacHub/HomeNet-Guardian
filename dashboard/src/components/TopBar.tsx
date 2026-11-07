@@ -13,11 +13,21 @@ type Props = {
   onLogout: () => void
 }
 
+/** The simulated time from the server (it follows the PC clock, or a set clock in a picture run). */
 function useClock() {
-  const [now, setNow] = useState(() => new Date())
+  const [now, setNow] = useState<Date | null>(null)
   useEffect(() => {
-    const t = window.setInterval(() => setNow(new Date()), 15_000)
-    return () => window.clearInterval(t)
+    let alive = true
+    const load = () =>
+      get<{ now: string }>('/clock')
+        .then((r) => alive && setNow(new Date(r.now)))
+        .catch(() => {})
+    load()
+    const t = window.setInterval(load, 15_000)
+    return () => {
+      alive = false
+      window.clearInterval(t)
+    }
   }, [])
   return now
 }
@@ -45,8 +55,8 @@ function usePendingApprovals(): number {
 export function TopBar({ route, parent, theme, onTheme, onLogout }: Props) {
   const now = useClock()
   const pending = usePendingApprovals()
-  const day = now.toLocaleDateString('en-GB', { weekday: 'short' })
-  const time = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })
+  const day = now ? now.toLocaleDateString('en-GB', { weekday: 'short' }) : ''
+  const time = now ? now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) : ''
 
   return (
     <header className="topbar">

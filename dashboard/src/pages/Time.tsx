@@ -185,7 +185,7 @@ export default function Time() {
               </section>
 
               <section className="panel time-hours" aria-labelledby="t-hour">
-                <div className="panel-head"><h2 id="t-hour">Time of day</h2><span className="time-muted">minutes per hour, estimate</span></div>
+                <div className="panel-head"><h2 id="t-hour">Time of day</h2><span className="time-muted">minutes per hour, all devices added, estimate</span></div>
                 <div
                   className="panel-pad"
                   role="img"

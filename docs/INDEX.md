@@ -30,6 +30,7 @@ Every file in docs/ is listed here with WHEN to read it. A script checks that no
 | reference/TASKS.md | Splitting work between parallel agents; quality checklist. |
 | reference/SECURITY_CHECKLIST.md | Phase 2 login work and Phase 5. |
 | reference/PRIOR_ART.md | Similar projects, blocklist licences, "how is this different" text. |
+| screenshots/ | Pictures for the README (from the separate picture run, D26) and demo.gif. |
 | proof/day-in-the-life.txt | Proof of Phase 1: the printed simulated day (`python -m homenet.demo`). |
 | ../IDEA.md | Ivan's original idea note (local only, not in git). What the app sees and does not see, screen list. |
 | ../.claude/memory.md | Digging into recent history (current month). |
