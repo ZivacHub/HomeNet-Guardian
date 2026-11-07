@@ -17,4 +17,4 @@ Put the brain behind a small local web server that only the parent can use. At t
 - D19: the app simulates today's date at the PC's clock (tests keep Thursday 2026-11-05). 2.1 needs a 'simulation clock' that feeds the engine events up to now, every few seconds.
 
 ## Phase gate record
-- Plain-words preview shown: 2026-11-07. Skills/repos search: skills "fastapi auth" (Auth0 skill for a paid service, 3 small ones with 4-41 installs: not adopted); GitHub "fastapi session cookie login" (nothing); context7 FastAPI docs: pwdlib + Argon2 recommended (pwdlib 0.3.1). Decisions asked: D18-D21. Ivan's go: (waiting)
+- Plain-words preview shown: 2026-11-07. Skills/repos search: skills "fastapi auth" (Auth0 skill for a paid service, 3 small ones with 4-41 installs: not adopted); GitHub "fastapi session cookie login" (nothing); context7 FastAPI docs: pwdlib + Argon2 recommended (pwdlib 0.3.1). Decisions asked: D18-D21. Ivan's go: 2026-11-07, "Go, start Phase 2".

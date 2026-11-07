@@ -23,9 +23,9 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
   - [x] 1.6 Alerts: new device, night use, DNS bypass
   - [x] 1.7 Time-spent estimate
   - [x] 1.8 "Day in the life" script + rule tests
-- [ ] Phase 2 — Local server + login
-  - [ ] 2.1 Local web API over the engine
-  - [ ] 2.2 Parent login (up to 2 parents, demo/demo)
+- [~] Phase 2 — Local server + login
+  - [x] 2.1 Local web API over the engine
+  - [x] 2.2 Parent login (up to 2 parents, demo/demo)
   - [ ] 2.3 First-start "I told my child" + notice template
   - [ ] 2.4 30-day log cleanup + "delete everything"
 - [ ] Phase 3 — Dashboard screens

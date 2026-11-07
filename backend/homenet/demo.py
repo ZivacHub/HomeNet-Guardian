@@ -13,13 +13,14 @@ import sys
 from collections import Counter
 from datetime import date, datetime, time
 
-from . import db, engine, timeuse
+from . import auth, db, engine, timeuse
 from .adapters import simulator as sim
 from .adapters.simulator import SimulatorAdapter
 
 DEMO_DAY = date(2026, 11, 5)        # a Thursday, so school-night rules apply
 PARENT_APPROVES_AT = time(17, 8)    # Mom approves Luka's 17:04 purchase request
-PLACEHOLDER_HASH = "demo-not-a-real-hash"   # real login (with hashing) comes in Phase 2
+# Demo logins (D21). All data is simulated, so these are shown on the login page and in the README.
+DEMO_LOGINS = {"Mom": ("demo", "demo"), "Dad": ("dad", "demo")}
 
 
 def seed_family(conn: sqlite3.Connection, start: date = DEMO_DAY) -> dict[str, int]:
@@ -31,9 +32,10 @@ def seed_family(conn: sqlite3.Connection, start: date = DEMO_DAY) -> dict[str, i
     ids: dict[str, int] = {}
     created = datetime.combine(start, time(0, 0)).isoformat()
     for name in sim.FAMILY_PARENTS:
+        username, password = DEMO_LOGINS[name]
         ids[name] = conn.execute(
             "INSERT INTO parents(username, display_name, password_hash, created_at) VALUES (?,?,?,?)",
-            (name.lower(), name, PLACEHOLDER_HASH, created)).lastrowid
+            (username, name, auth.hash_password(password), created)).lastrowid
     for c in sim.FAMILY_CHILDREN:
         ids[c["name"]] = engine.add_child(conn, c["name"], c["age"], c["age_profile"])
     for d in sim.DEVICES:

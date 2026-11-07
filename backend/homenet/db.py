@@ -110,6 +110,14 @@ CREATE TABLE IF NOT EXISTS alerts (
 );
 CREATE INDEX IF NOT EXISTS idx_alerts_ts ON alerts(ts);
 
+-- Logged-in browsers. Only a hash of the session token is stored, never the token itself.
+CREATE TABLE IF NOT EXISTS sessions (
+    token_hash TEXT PRIMARY KEY,
+    parent_id  INTEGER NOT NULL REFERENCES parents(id) ON DELETE CASCADE,
+    created_at REAL NOT NULL,     -- real clock (unix seconds), not the simulation clock
+    last_seen  REAL NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS settings (
     key   TEXT PRIMARY KEY,
     value TEXT NOT NULL
@@ -128,7 +136,7 @@ DEFAULT_SETTINGS = {
 
 TABLES = (
     "parents", "children", "devices", "queries", "rules", "schedules",
-    "pauses", "approval_requests", "alerts", "settings",
+    "pauses", "approval_requests", "alerts", "sessions", "settings",
 )
 
 
