@@ -9,11 +9,11 @@ This board is the ONLY place that tracks progress. Tick a step in the same chang
 (phases = top-level lines, steps = indented lines), so keep exactly this shape. Each phase title starts with `Phase <number>`
 and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, two digits: Phase 4 -> `04-screens.md`).
 
-- [~] Phase 0 — Foundation
+- [x] Phase 0 — Foundation
   - [x] 0.1 Project files from template, CLAUDE.md filled
   - [x] 0.2 Folder layout, start command, empty dashboard opens
   - [x] 0.3 Git init, .gitignore, secrets scan, first commit
-  - [ ] 0.4 Public GitHub repo ZivacHub/HomeNet-Guardian, first push
+  - [x] 0.4 Public GitHub repo ZivacHub/HomeNet-Guardian, first push
 - [ ] Phase 1 — Engine + simulator
   - [ ] 1.1 Data model and SQLite tables
   - [ ] 1.2 Data source "adapter" interface + simulator adapter

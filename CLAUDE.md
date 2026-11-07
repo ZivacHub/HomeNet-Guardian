@@ -46,7 +46,7 @@ One-line purpose: a parent's home-network dashboard that needs nothing on the ch
 - UI work: see Design stack. DB: SQLite via Python's sqlite3. Docs/versions: context7.
 
 ## Current state
-- 2026-11-07: plan approved; Phase 0 (Foundation) in progress.
+- 2026-11-07: Phase 0 done (skeleton runs, public repo). Next: Phase 1 gate.
 
 ## How we work here (BUSNUS workflow v3, details in ~/.claude/CLAUDE.md)
 - docs/PRODUCT.md = the goal in Ivan's words (compass). docs/plan/BOARD.md = progress, in order. docs/DECISIONS.md = what Ivan decided.
