@@ -14,7 +14,7 @@ Parental-control apps live on the child's device, where children find and remove
 ## How it works
 
 ```mermaid
-flowchart LR
+flowchart TB
     D["Phones, tablets, laptops,<br/>TV, game console"] -->|"ask for site names (DNS)<br/>open encrypted connections (SNI)"| R
     subgraph R["Home router"]
         DHCP["DHCP<br/>who is on the network"]

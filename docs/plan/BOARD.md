@@ -4,7 +4,7 @@ Goal and non-negotiables: docs/PRODUCT.md. Every decision: docs/DECISIONS.md. De
 This file stays SMALL on purpose: the tick-list, the rules and the change log. It is read at the start of every session.
 
 ## Status board
-Focus: Phase 6 first, then Phase 4 and 5 (Ivan, 2026-11-07).
+Focus: Phase 6 done first (Ivan, 2026-11-07); now Phase 4, then 5.
 Legend: `[ ]` not started · `[~]` in progress · `[x]` done (proof in the step) · `[-]` dropped (reason in the Change log).
 This board is the ONLY place that tracks progress. Tick a step in the same change set that finishes it. A script reads it
 (phases = top-level lines, steps = indented lines), so keep exactly this shape. Each phase title starts with `Phase <number>`
@@ -45,12 +45,12 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
 - [ ] Phase 5 — Security check
   - [ ] 5.1 Code security review + fixes
   - [ ] 5.2 Attack the running app on localhost + fixes
-- [~] Phase 6 — Showcase on GitHub
+- [x] Phase 6 — Showcase on GitHub
   - [x] 6.1 How-it-works diagram
   - [x] 6.2 Screenshots of every screen
   - [x] 6.3 Animated GIF
   - [x] 6.4 README: what, how it works, OpenWrt guide, limits
-  - [ ] 6.5 Private-data scan, push, check the GitHub page
+  - [x] 6.5 Private-data scan, push, check the GitHub page
 
 ## Rules for this plan
 - **Order:** the next step is the first unticked step of the first unfinished phase. Jumping ahead, reordering or dropping needs the owner's OK and a Change log line. Add new steps with the next free number; never renumber old ones.
