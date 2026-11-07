@@ -27,7 +27,7 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
   - [x] 2.1 Local web API over the engine
   - [x] 2.2 Parent login (up to 2 parents, demo/demo)
   - [x] 2.3 First-start "I told my child" + notice template
-  - [ ] 2.4 30-day log cleanup + "delete everything"
+  - [x] 2.4 30-day log cleanup + "delete everything"
 - [~] Phase 3 — Dashboard screens
   - [x] 3.1 React app shell, navigation, light/dark themes
   - [x] 3.2 Overview screen
@@ -64,3 +64,4 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
 - 2026-11-07 (Claude proposed, Ivan approved the phase list: "Yes, write the steps"): plan v1 with 7 phases; steps waiting for approval.
 - 2026-11-07 (Ivan: "Approve, start Phase 0"): plan v1 approved with its grades (6 light, 17 standard, 11 strong).
 - 2026-11-07 (Ivan chose the top-navigation preview, D22): step 3.1 uses a top navigation bar instead of the side menu.
+- 2026-11-07 (Claude, correction): step 2.4 ticked; it was finished and tested at Phase 2 close (tests/test_retention.py, 6 tests) but the tick command missed the wording.
