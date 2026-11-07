@@ -1,5 +1,5 @@
 # Handoff: HomeNet Guardian (folder Family_WiFi)   (updated 2026-11-07 14:00)
-Git: main @ see `git log -1` "Phase 0 closed: board, handoff, memory" · pushed: yes (https://github.com/ZivacHub/HomeNet-Guardian, PUBLIC) · uncommitted: none
+Git: main @ fb4edb8 "Phase 0 closed: board, handoff, memory" · pushed: yes (https://github.com/ZivacHub/HomeNet-Guardian, PUBLIC) · uncommitted: none
 
 ## Where we are in the plan
 Phase 0 of 7 — Foundation is DONE. Steps done 4/34. Next per plan: Phase 1 gate, then 1.1 Data model and SQLite tables.
