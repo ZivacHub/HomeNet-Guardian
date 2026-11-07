@@ -14,15 +14,15 @@ and has a detail file `docs/plan/phases/<NN>-<name>.md` (NN = the phase number, 
   - [x] 0.2 Folder layout, start command, empty dashboard opens
   - [x] 0.3 Git init, .gitignore, secrets scan, first commit
   - [x] 0.4 Public GitHub repo ZivacHub/HomeNet-Guardian, first push
-- [~] Phase 1 — Engine + simulator
+- [x] Phase 1 — Engine + simulator
   - [x] 1.1 Data model and SQLite tables
   - [x] 1.2 Data source "adapter" interface + simulator adapter
   - [x] 1.3 Site categories (own list + StevenBlack explicit list)
   - [x] 1.4 Rules engine: block, categories, schedule, pause
   - [x] 1.5 Payments as approval requests
-  - [ ] 1.6 Alerts: new device, night use, DNS bypass
+  - [x] 1.6 Alerts: new device, night use, DNS bypass
   - [x] 1.7 Time-spent estimate
-  - [ ] 1.8 "Day in the life" script + rule tests
+  - [x] 1.8 "Day in the life" script + rule tests
 - [ ] Phase 2 — Local server + login
   - [ ] 2.1 Local web API over the engine
   - [ ] 2.2 Parent login (up to 2 parents, demo/demo)

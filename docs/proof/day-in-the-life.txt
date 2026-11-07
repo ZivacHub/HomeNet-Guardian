@@ -1,0 +1,53 @@
+HomeNet Guardian - a simulated day: Thursday 05 November 2026
+Family: Mom, Dad, Ana (14), Luka (9). All data is simulated.
+====================================================================================================
+
+DEVICES
+  Mom's iPhone         phone    Mom                      first seen 00:00  last seen 22:29  331 lookups
+  Dad's Pixel          phone    Dad                      first seen 00:00  last seen 23:29  297 lookups
+  Dad's laptop         laptop   Dad                      first seen 00:00  last seen 15:56  433 lookups
+  Ana's phone          phone    Ana                      first seen 00:00  last seen 23:37  406 lookups
+  Ana's laptop         laptop   Ana                      first seen 00:00  last seen 20:55  187 lookups
+  Luka's iPad          tablet   Luka                     first seen 00:00  last seen 20:51  230 lookups
+  Living room TV       tv       Family                   first seen 00:00  last seen 21:29  178 lookups
+  Luka's PlayStation   console  Luka                     first seen 00:00  last seen 18:58  55 lookups
+  Galaxy-A14           phone    unknown - not assigned   first seen 16:20  last seen 18:03  88 lookups
+
+TIMELINE (blocked lookups and rule decisions; repeats folded)
+  17:04-17:06 Luka's iPad          3 lookups (apps.apple.com, buy.itunes.apple.com...) BLOCKED  Store or payment: waiting for a parent's approval
+  17:12-17:12 Luka's iPad          2 lookups (apps.apple.com, buy.itunes.apple.com...) allowed  Approved by Mom until 17:38
+  17:41:00    Luka's iPad          buy.itunes.apple.com                         BLOCKED  Store or payment: waiting for a parent's approval
+  19:29-19:29 Ana's laptop         2 lookups (cloudflare-dns.com, dns.google...) BLOCKED  Encrypted DNS server (blocked so the filter keeps working)
+  20:45-20:51 Luka's iPad          4 lookups (i.ytimg.com, www.roblox.com...)   BLOCKED  Bedtime 20:30-07:00
+  21:14-21:14 Ana's phone          3 lookups (redtube.com, www.redtube.com...)  BLOCKED  Explicit site (always blocked)
+  23:06-23:37 Ana's phone          41 lookups (graph.instagram.com, p16-sign.tiktokcdn-us.com...) BLOCKED  School nights 22:00-06:30
+
+ALERTS FOR THE PARENT
+  16:20:00  [warning ] New device joined the Wi-Fi: Galaxy-A14. Assign it to someone or mark it as known.
+  17:04:12  [warning ] Luka's iPad wants to use a store or payment site (buy.itunes.apple.com). Approve or deny.
+  17:41:00  [warning ] Luka's iPad wants to use a store or payment site (buy.itunes.apple.com). Approve or deny.
+  19:29:50  [warning ] Ana's laptop tried to use an encrypted DNS server (dns.google); it was blocked.
+  19:40:29  [critical] Ana's laptop is online but its site lookups stopped reaching the router: it may be bypassing the filter (encrypted DNS or VPN).
+  21:14:05  [critical] Explicit site blocked on Ana's phone.
+  23:06:00  [info    ] Ana's phone was used at 23:06, during the night. (blocked by schedule)
+
+PAYMENT REQUESTS
+  17:04:12  Luka's iPad          buy.itunes.apple.com         expired by Mom at 17:08, allowed until 17:38
+  17:41:00  Luka's iPad          buy.itunes.apple.com         pending
+  Note: Store and payment blocking works on site names only. Real purchase control lives in the phone's family settings (Apple Ask to Buy, Google Family Link).
+
+WHERE THE CHILDREN SPENT TIME (Estimated from site lookups; not exact screen time.)
+  Ana: about 402 min in 18 sessions
+     by category: social 200 min, video 90 min, learning 49 min, music 37 min, messaging 16 min
+     top sites (min): instagram.com 80, tiktok.com 65, youtube.com 59, snapchat.com 54, spotify.com 37
+  Luka: about 238 min in 11 sessions
+     by category: games 171 min, learning 35 min, video 32 min, payments 1 min
+     top sites (min): roblox.com 84, minecraft.net 54, khanacademy.org 35, youtube.com 32, epicgames.com 16
+
+SUMMARY
+  2205 lookups, 54 blocked.
+      41  School nights 22:00-06:30
+       4  Store or payment: waiting for a parent's approval
+       4  Bedtime 20:30-07:00
+       3  Explicit site (always blocked)
+       2  Encrypted DNS server (blocked so the filter keeps working)
